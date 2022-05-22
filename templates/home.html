@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home{%endblock%}</title>
+  </head>
+  <body>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <header>
+      <h1>{%block name%}Home Page{%endblock%}</h1>
+      <nav>
+        <ul id="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/About">About</a></li>
+          <li>
+            <input type="search" placeholder="Search" />
+            <input
+              type="submit"
+              value="Search"
+              id="search"
+              onclick="alert('For Real?')"
+            />
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>{%block content%}
+        <h1>published: {% now "P" %}</h1>
+        <h3>This is the home page</h3>
+        {%endblock%}
+    </main>
+    <footer>
+      <div id="cc">
+        <p>Copy Right Reserved @2022</p>
+      </div>
+      <div class="footer-container">
+        <div class="footer-1">
+          <h3>About Us</h3>
+          <a href="#">Blog</a>
+          <a href="#">Creators</a>
+          <a href="#">Staff</a>
+          <a href="#">Investors</a>
+        </div>
+        <div class="footer-2">
+          <h3>Contact Us</h3>
+          <a href="#">Jobs</a>
+          <a href="#">Support</a>
+          <a href="#">Contact</a>
+          <a href="#">Internship</a>
+        </div>
+        <div class="footer-3">
+          <h3>Social Media</h3>
+          <a href="#">Facebook</a>
+          <a href="#">Youtube</a>
+          <a href="#">Instagram</a>
+          <a href="#">Discord</a>
+        </div>
+        <div class="sub">
+          <h3>Subscribe to Our Newsletter</h3>
+          <div class="sub-box">
+          <input type="Email" placeholder="Type your Email" id="box" />
+          <input type="submit" value="Sign Up" id="signup-button" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
